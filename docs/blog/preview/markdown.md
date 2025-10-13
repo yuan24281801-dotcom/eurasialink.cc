@@ -1,162 +1,162 @@
 ---
-title: Markdown
+title: Markdown 语法与扩展示例
 tags:
   - markdown
 createTime: 2025/10/11 02:35:31
 permalink: /blog/qln10k86/
 ---
 
-## 标题H2
+## 标题示例
 
-### 标题H3
+### 三级标题
 
-#### 标题H4
+#### 四级标题
 
-##### 标题H5
+正文内容演示。
 
-###### 标题H6
+**加粗**、_斜体_、~~删除线~~、==高亮==
 
-## 标题2 Badge <Badge type="tip" text="Badge" />
+数学公式：$E=mc^2$
 
-### 标题3 Badge <Badge type="warning" text="Badge" />
+脚注示例[^1]
 
-#### 标题4 Badge <Badge type="danger" text="Badge" />
+---
 
-正文内容。
+## 列表与任务
 
-`@property` CSS at-rule是 [CSS Houdini API](https://developer.mozilla.org/zh-CN/docs/Web/Guide/Houdini)
-的一部分，它允许开发者显式地定义他们的 [CSS 自定义属性](https://developer.mozilla.org/zh-CN/docs/Web/CSS/--*),
-允许进行属性类型检查、设定默认值以及定义该自定义属性是否可以被继承。
+- 无序项一
+- 无序项二
 
-`@property` 的出现，极大的增强了 CSS 的能力。
+1. 有序项一
+2. 有序项二
 
-加粗：**加粗文字**
+- [x] 已完成
+- [ ] 未完成
 
-斜体： _斜体文字_
+---
 
-~~删除文字~~
+## 表格
 
-内容 ==标记==
+| 名称   | 类型   | 备注     |
+| ------ | ------ | -------- |
+| A      | int    | $100$    |
+| B      | string | $abc$    |
 
-数学表达式： $-(2^{n-1})$ ~ $2^{n-1} -1$
+---
 
-$\frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
-= \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^ Ir \cdots (r-i+1) (\log y)^{ri}} {\omega^i} \right\}$
+## 引用与链接
 
-19^th^
+> 这是引用内容。
 
-H~2~O
+[内部链接](/)
+[外部链接](https://github.com/)
 
-::: center
-内容居中
-:::
+---
 
-::: right
-内容右对齐
-:::
+## 图片
 
-- 无序列表1
-- 无序列表2
-- 无序列表3
+![Logo](/plume.svg)
 
-1. 有序列表1
-2. 有序列表2
-3. 有序列表3
+---
 
-- [ ] 任务列表1
-- [ ] 任务列表2
-- [x] 任务列表3
-- [x] 任务列表4
+## Badge 与图标
 
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+- <Badge type="info" text="信息" />
+- <Badge type="tip" text="提示" />
+- <Icon name="material-symbols:home" size="1em" />
 
-> 引用内容
->
-> 引用内容
+---
 
-[链接](/)
+## 代码块
 
-[外部链接](https://github.com/pengzhanbo)
-
-![plume](/plume.svg)
-
-**Badge：**
-
-- <Badge type="info" text="info badge" />
-- <Badge type="tip" text="tip badge" />
-- <Badge type="warning" text="warning badge" />
-- <Badge type="danger" text="danger badge" />
-
-**图标：**
-
-- home - <Icon name="material-symbols:home" color="currentColor" size="1em" />
-- vscode - <Icon name="skill-icons:vscode-dark" size="2em" />
-- twitter - <Icon name="skill-icons:twitter" size="2em" />
-
-**demo wrapper：**
-
-::: demo-wrapper title="示例" no-padding height="200px"
-<style scoped>
-.open-door {
-  display: flex;
-  gap: 20px;
-  padding: 20px;
-}
-.open-door .main {
-  background: #ccc;
-}
-</style>
-
-<div class="open-door">
-  <div class="main">main</div>
-  <div class="aside">aside</div>
-</div>
-
-:::
-
-**代码：**
-
-```js whitespace
+```js
 const a = 1
 const b = 2
 const c = a + b
+```
 
-// [!code word:obj]
-const obj = {
-  toLong: {
-    deep: {
-      deep: {
-        deep: {
-          value: 'this is to long text. this is to long text. this is to long text. this is to long text.', // [!code highlight]
-        }
-      }
-    }
-  }
+```ts
+function sum(a: number, b: number): number {
+  return a + b
 }
 ```
 
-**Code Blocks TwoSlash：**
+---
 
-```ts twoslash
-// @errors: 2339
-const welcome = 'Tudo bem gente?'
-const words = welcome.contains(' ')
+## 代码高亮与聚焦
+
+```ts
+function foo() {
+  const a = 1 // [!code highlight]
+  // ...existing code...
+}
 ```
 
-```ts twoslash
-import express from 'express'
-const app = express()
-app.get('/', (req, res) => {
-  res.send
-})
-app.listen(3000)
+---
+
+## 代码分组
+
+::: code-tabs
+@tab JS
+
+```js
+console.log('JS 示例')
 ```
 
-```ts twoslash
+@tab TS
+
+```ts
+console.log('TS 示例')
+```
+
+:::
+
+---
+
+## 提示块
+
+::: tip
+这是一个提示块。
+:::
+
+::: warning
+这是一个警告块。
+:::
+
+---
+
+## demo 示例
+
+:::: demo title="简单示例" desc="演示 HTML/CSS/JS"
+::: code-tabs
+@tab HTML
+
+```html
+<div id="demo">Hello Markdown</div>
+```
+
+@tab JS
+
+```js
+document.getElementById('demo').style.color = 'blue'
+```
+
+@tab CSS
+
+```css
+#demo { font-weight: bold; }
+```
+
+:::
+::::
+
+---
+
+## 脚注
+
+脚注示例[^1]。
+
+[^1]: 这是脚注内容。
 import { createHighlighter } from 'shiki'
 
 const highlighter = await createHighlighter({ themes: ['nord'], langs: ['javascript'] })
@@ -408,3 +408,60 @@ app.appendChild(window.document.createElement('small')).textContent = a
     也可以由多个段落组成
 
 [^second]: 脚注文字。
+
+---
+
+## 天猫服务与信息
+
+### 搜索与频道
+
+- 商品、品牌、店铺搜索
+- 频道：天猫、喵鲜生、天猫会员、电器城、天猫超市、医药馆、天猫国际、天猫汽车
+
+### 商品分类
+
+- 女装：T恤、连衣裙、衬衫、雪纺衫、风衣
+- 男装：夹克、T恤、休闲裤、牛仔裤
+- 数码：笔记本、小米、平板电脑、单反
+- 家居：四件套、沙发、吸顶灯、马桶、电视柜
+- 美妆：面膜、护肤套装、口红、香水、洗发水
+- 母婴：亲子装、运动鞋、婴儿玩具、奶粉https://baidu.com
+- 美食：坚果、零食、点心、茶叶、葡萄酒
+- 运动：鱼竿、运动裤、[跑步鞋](https://baidu.com)
+
+### 购物指南
+
+- 免费注册
+- 支付宝开通与充值
+- 天猫保障、发票保障、售后规则
+- 物流时效保障
+- 支付方式：快捷支付、信用卡、余额宝、花呗
+
+### 商家服务
+
+- 商家入驻、商家中心
+- 天猫规则、平台协议
+- 必修课、喵言喵语
+
+### 关于天猫
+
+- 商家服务大厅、开放平台
+- 联系我们、网站合作
+- 法律声明、隐私政策、知识产权
+
+### 相关平台
+
+阿里巴巴集团旗下：淘宝、天猫、聚划算、速卖通、1688、阿里妈妈、飞猪、阿里云、AliOS、阿里通信、万网、高德、UC、友盟、钉钉、支付宝、阿里安全
+
+### 法律与备案信息
+
+- 增值电信业务经营许可证：浙B2-20110446
+- 出版物网络交易平台备案：新出发浙备字第2024005号
+- 营业性演出许可证：浙演经20213300000101
+- 集邮市场备案：杭集邮备005
+- 互联网违法和不良信息举报：0571-81683755 jubao.tb@service.taobao.com
+- 药品、医疗器械、食品等相关资质及备案信息
+- © 2003-现在 TMALL.COM 版权所有
+
+pnpm run docs:dev
+
